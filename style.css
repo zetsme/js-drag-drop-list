@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+:root {
+  --textColor: black;
+  --bgColor: #dcc1c1;
+  --borderColor: black;
+}
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+body {
+  font-family: 'Dela Gothic One', cursive;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--textColor);
+}
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+ul {
+  list-style-type: none;
+}
+.draggable-list {
+  border: 1px solid var(--borderColor);
+  margin: 2rem 0;
+}
+.draggable-list li {
+  display: flex;
+  flex: 1;
+}
+.draggable-list li:not(:last-child) {
+  border-bottom: 1px solid var(--borderColor);
+  background-color: #fff;
+}
+.draggable-list .number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  font-size: 2rem;
+  background-color: var(--bgColor);
+}
+.draggable {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  padding: 1rem;
+}
+.draggable .month {
+  margin-right: 2rem;
+}
+.check-btn {
+  background-color: var(--bgColor);
+  padding: 1rem 2rem;
+  border: none;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+.check-btn:hover {
+  filter: brightness(0.9);
+}
+.check-btn:active {
+  transform: scale(0.95);
+}
+.hold {
+  box-shadow: inset 3px 3px 2px black, inset -3px -3px 2px black;
+}
+.draggable-list li.over {
+  background-color: var(--bgColor);
+}
+.draggable-list li.right .month {
+  color: green;
+}
+.draggable-list li.wrong .month {
+  color: red;
+}
